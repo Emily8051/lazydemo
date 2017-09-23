@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>使用canvas实现和HTML5 video交互的弹幕效果</title>
+	</head>
+	<body>
+		<canvas id="canvasBarrage" width="" height=""></canvas>
+		<video id="videoBarrage" width="640" height="384" src="./video.mp4" controls></video>
+		<script type="text/javascript">
+			//弹幕数据
+			var dataBarrage = [{
+				value: 'speed设为0为非滚动',
+				time: 1,//单位秒
+				speed:0
+			},{
+				value: 'time控制弹幕时间，单位秒',
+				color:'blue',
+				time: 2
+			},...];
+			
+			var CanvasBarrage = function(canvas,video,optinos){
+				if(!canvas || !video){
+					return;
+				}
+				var defaults = {
+					opacity: 100,
+					fontSize: 24,
+					speed: 2,
+					range: [0,1],
+					color :'white',
+					data: []
+				};
+			}
+			
+			//初始化弹幕方法
+			var eleCanvas = document.getElementById('canvasBarrage');
+			var eleVideo = document.getElementById('videoBarrage');
+			var demoBarrage = new CanvasBarrage(eleCanvas,eleVideo,{
+				data: dataBarrage
+			});
+			
+		</script>
+	</body>
+</html>
